@@ -1,0 +1,15 @@
+node('python') {
+                  stage('build') {
+                    sh 'pyhton3 -V'
+                  }
+                  stage('deploy') {
+                    git branch: 'main', url: 'https://github.com/michelleamesquita/test-git.git'
+                    sh 'python3 hello.py'
+                  }
+                  stage('deploy') {
+                      
+                     echo 'finished :D '
+
+                  }
+                }
+         
